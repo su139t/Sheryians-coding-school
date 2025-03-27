@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloading Bar</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background: url(https://images.unsplash.com/photo-1739032713558-017ad58b0fbb?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+    <main>
+        <div class="card flex flex-col justify-between rounded-lg w-100 h-60 bg-white shadow-lg p-4">
+            <div class="image flex w-full justify-start items-center gap-5">
+                <img src="https://i.scdn.co/image/ab67616d0000b273d2e3387f6937d6102e7e3cbe" class="w-20 rounded-lg "
+                    alt="">
+                <h1 class="text-2xl">Lag Ja Gale Se Phir: Love Songs💕...</h1>
+            </div>
+            <div id="progress-bar" class="w-full h-4 bg-gray-200 rounded-full">
+                <div id="growth" class="bg-green-500 rounded-full h-full w-0"></div>
+            </div>
+            <div class="flex justify-between">
+                <div id="time" class="text-gray-600"></div>
+                <div id="percentage" class="text-gray-600">0%</div>
+            </div>
+            <div class="downloading-content flex justify-between items-center">
+                <div id="song-name" class="text-gray-800 text-sm">Lag_Ja_Gale_Se_Phir.mp3</div>
+                <button class="bg-green-600 text-white rounded-lg active:scale-95 py-2 px-4 text-sm">Download
+                    Now...</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        let progress = 0;
+        let miliseconds = Math.floor(Math.random() * 100) + 1;
+        let time = miliseconds * 100;
+        console.log(time / 1000);
+
+        // let copy = time;
+        let growth = document.getElementById('growth');
+        let percentage = document.getElementById('percentage');
+        let btn = document.querySelector('button');
+        // let totaltime = document.getElementById('time');
+        btn.addEventListener('click', function () {
+            let interval = setInterval(function () {
+                progress++
+                percentage.innerHTML = progress + "%";
+                growth.style.width = progress + "%"
+                btn.disabled = true;
+                btn.innerHTML = "Downloading..."
+                btn.style.backgroundColor = "gray"
+                // copy -= (copy / 100);
+                // var min = Math.floor((copy / 1000 / 60) << 0),
+                //     sec = Math.floor((copy / 1000) % 60);
+                // totaltime.innerHTML = min + ':' + sec;
+            }, miliseconds);
+            setTimeout(function () {
+                clearInterval(interval);
+                btn.style.backgroundColor = "green"
+                btn.innerHTML = "Downloaded ✔"
+                setTimeout(function () {
+                    btn.innerHTML = "Download Now...";
+                    btn.disabled = false;
+                    progress = 0;
+                    percentage.innerHTML = progress + "%";
+                    growth.style.width = progress + "%"
+                }, 2000)
+            }, time)
+        })
+    </script>
+    <!-- <script>
+        let progress = 0;
+        let miliseconds = Math.floor(Math.random() * 5000) + 1000; // Random time between 1 and 5 seconds
+        console.log("miliseconds", miliseconds);
+
+        let totalTime = miliseconds; // Total time in milliseconds
+        console.log("total time taken", totalTime);
+
+        let growth = document.getElementById('growth');
+        let percentage = document.getElementById('percentage');
+        let btn = document.querySelector('button');
+        let totaltime = document.getElementById('time');
+
+        btn.addEventListener('click', function () {
+            let interval = setInterval(function () {
+                if (progress < 100) {
+                    progress++;
+                    percentage.innerHTML = progress + "%";
+                    growth.style.width = progress + "%";
+                    
+                    // Calculate remaining time
+                    let remainingTime = totalTime * (1 - (progress / 100));
+                    let min = Math.floor((remainingTime / 1000 / 60) % 60);
+                    let sec = Math.floor((remainingTime / 1000) % 60);
+                    totaltime.innerHTML = `${min}:${sec < 10 ? '0' : ''}${sec}`; // Format seconds
+                }
+            }, totalTime / 100); // Update every 1% of the total time
+
+            setTimeout(function () {
+                clearInterval(interval);
+                btn.style.backgroundColor = "green";
+                btn.innerHTML = "Downloaded ✔";
+                setTimeout(function () {
+                    btn.innerHTML = "Download Now...";
+                    btn.disabled = false;
+                    progress = 0;
+                    percentage.innerHTML = progress + "%";
+                    growth.style.width = progress + "%";
+                    totaltime.innerHTML = "0:00"; // Reset time display
+                }, 2000);
+            }, totalTime);
+            btn.disabled = true; // Disable button during download
+            btn.innerHTML = "Downloading...";
+            btn.style.backgroundColor = "gray";
+        });
+    </script> -->
+</body>
+
+</html>
