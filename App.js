@@ -3,9 +3,6 @@
 // i = i++ + ++i;
 // console.log(i);
 
-
-
-
 //Q2
 // let a = 11, b = 22, c;
 // c = a + b + a++ + b++ + ++a + ++b;
@@ -14,26 +11,17 @@
 // console.log("c=" + c);
 // Output: qa=13 , b=24 , c=103
 
-
-
-
 //Q3
 // let i = 0;
 // i = i++ - --i + ++i - i--;
 // console.log(i);
 // Output:0
 
-
-
-
 //Q4
 // let b = true;
 // b++;
 // console.log(b);
 // Output:2
-
-
-
 
 //Q5
 // let i = 1, j = 2, k = 3;
@@ -47,16 +35,10 @@
 // k=2
 // m=-4
 
-
-
-
 //Q6
 // let a = 1, b = 2;
 // console.log(--b - ++a + ++b - --a);
 // Output: 0
-
-
-
 
 //Q7
 // let i = 19, j = 29, k;
@@ -68,16 +50,10 @@
 //         j=29
 //         k=-20
 
-
-
-
 //Q8
 // let i = 11;
 // let j = --(i++);
 // Uncaught SyntaxError: Invalid left-hand side expression in prefix operation (at testfile.js:43:11)
-
-
-
 
 //Q9
 // let m = 0, n = 0;
@@ -85,33 +61,21 @@
 // console.log(p);
 //Output : 1
 
-
-
-
 //Q10
 // let a = 1;
 // a = a++ + ++a * --a - a--;
 // console.log(a);
 // Output : 5
 
-
-
-
 //Q11
 // let a = 11++;
 // console.log(a);
 // Uncaught SyntaxError: Invalid left-hand side expression in postfix operation (at testfile.js:59:9)
 
-
-
-
 //@12
 // let i = 0, j = 0;
 // console.log(--i * i++ * ++j * j++);
 // Output : 1
-
-
-
 
 //@13
 // let year = Number(prompt("Enter Year"));
@@ -131,9 +95,6 @@
 // }
 // console.log(isLeap);
 
-
-
-
 // let rating = Number(prompt("Enter Number"));
 // let moviename = prompt("Enter Movie name");
 // if(rating > 0 && rating <= 2){
@@ -148,9 +109,6 @@
 // if(rating > 4.5 && rating <= 5){
 //   alert(`${moviename} is a Super Hit`);
 // }
-
-
-
 
 // do {
 //     let menu = prompt("Enter Name / Choose a Number - 1.Starters , 2.Main Course , 3.Dessert").toLowerCase().replaceAll(' ', '');
@@ -237,9 +195,6 @@
 //     var UserInput = prompt("Kya aap wapas main menu dekhna chahte ho? yes / no").toLowerCase();
 // } while (UserInput === "yes");
 
-
-
-
 // Find the Sum of Even Digits in a Number
 // let inputnum = Number(prompt("Enter a number"));
 // let numLength = inputnum.toString().length;
@@ -252,9 +207,6 @@
 //     }
 // }
 // console.log(sum);
-
-
-
 
 // Find the Largest Digit in a Number
 // let inputnum = Number(prompt("Enter a number"));
@@ -269,9 +221,6 @@
 // }
 // console.log(greaterNum);
 
-
-
-
 // let inputnum = Number(prompt("Enter a number"));
 // let numLength = inputnum.toString().length +1;
 // let sum = 0 ;
@@ -284,9 +233,6 @@
 // if (sum % 11 == 0) console.log("Valid ISBN");
 // else console.log("Invalid ISBN");
 
-
-
-
 // let num = "02013145%";
 // let sum = 0;
 // for (let i = 0; i < num.length; i++) {
@@ -294,9 +240,6 @@
 // }
 // if (sum % 11 == 0) console.log("Valid ISBN");
 // else console.log("Invalid ISBN");
-
-
-
 
 // Harshad Number
 // let inputnum = Number(prompt("Enter a number"));
@@ -310,18 +253,12 @@
 // if (copy % sum == 0) console.log("Harshad Number");
 // else console.log("Not a Harshad Number");
 
-
-
-
 //Ques 4. Perfect Square
 // let inputnum = Number(prompt("Enter a number"));
 // let squaredigit = Math.sqrt(inputnum); //
 // let copy = Math.floor(squaredigit);
 // if(squaredigit == copy) console.log("Perfect Square");
 // else console.log("Not a Perfect Square");
-
-
-
 
 //5. Abundant Number
 // let inputnum = Number(prompt("Enter a number"));
@@ -334,9 +271,6 @@
 // }
 // if(inputnum < sum) console.log("Abundant Number");
 // else console.log("Not a Abundant Number");
-
-
-
 
 // 6.Fibonacci Series using Loop
 // const number = parseInt(prompt('Enter the number of terms: '));
@@ -351,8 +285,6 @@
 // }
 // console.log(Fibonacci);
 
-
-
 //10. Neon Number
 // let number = parseInt(prompt('Enter the number'));
 // let numlenght = number.toString().length + 1;
@@ -365,8 +297,6 @@
 // }
 // if(number == sum)console.log("Neon Number");
 // else console.log("Not a Neon Number");
-
-
 
 // 9.Calculate Area using Switch Statement
 // let input = prompt(
@@ -399,7 +329,6 @@
 //     console.log("Input is Invalid");
 //     break;
 // }
-
 
 //15. Number of Days in a Month
 // let month = Number(prompt("Enter month number from 1 to 12"));
@@ -443,8 +372,6 @@
 //     break;
 // }
 
-
-
 // 11.Sum of Even Indexed Fibonacci Numbers
 // let number = parseInt(prompt('Enter the number of terms: '));
 // let copy = 2*number;
@@ -461,7 +388,6 @@
 // }
 // console.log(evenindex);
 
-
 // Q2. HCF/GCD
 // let a = 12 , b = 18;
 // let HCF ;
@@ -472,4 +398,58 @@
 // }
 // console.log(HCF);
 
+// let n = 7;
+// let copy = n;
+// let square = n*n;
+// let counter = 0;
+// while(n>0){
+//     counter++;
+//     n = Math.floor(n/10);
+// }
+// let check = square % Math.pow(10,counter)
+// console.log(check);
+// if(check == copy) console.log("Yes");
+// else console.log("No");
+
+// let rev = 0;
+// let n = 146;
+// while(n>0){
+//     let rem = n % 10;
+//     rev = (rev*10)+rem;
+//     n = Math.floor(n / 10);
+// }
+
+// tringle print
+// for(let i = 1 ; i <= n ; i++){
+//     for(let j = 1 ; j <= n - i ; j++){
+//       process.stdout.write(" ");
+//     }
+//      for(let j = 1 ; j <= i ; j++){
+//       process.stdout.write(" *");
+//     }
+//     console.log();
+// }
+
+// let n = 5;
+// for(let i = 1 ; i <= n ; i++){
+//     for(let j = 1 ; j <= n - i ; j++){
+//       process.stdout.write("_ ");
+//     }
+//      for(let j = 1 ; j <= i ; j++){
+//       process.stdout.write("* ");
+//     }
+//     console.log();
+// }
+
+// let n = 5;
+// for (let i = 1; i <= n; i++) {
+//   for (let j = 1; j <= (n*2)-1; j++) {
+//     if (i == j || i+j == n*2 ){
+//       process.stdout.write("* ");
+//     } else {
+//       process.stdout.write(" ");
+//     }
+//   }
+//   console.log();
+// }
 
