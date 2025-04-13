@@ -453,3 +453,12 @@
 //   console.log();
 // }
 
+// Q35. Print Each Character on a New Line
+// Given a string, print each character on a separate line.
+
+// function printEachChar(str){
+//         for (let char of str) {
+//             console.log(char);
+//         }
+// }
+// printEachChar("Hello");

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Downloader</title>
+    <style>
+        /* #hiddenWebsite {
+            display: none; 
+        } */
+    </style>
+</head>
+
+<body>
+    <button id="simulateButton">Click Me to Simulate Shift + D</button>
+        <!-- <iframe id="hiddenWebsite"
+        src="https://photos.google.com/share/AF1QipPF3rKwRDB3uQ9sDU378HhHke_FebJgmHjdNC4-Q68E0cOEqdXEgwEkQ9va5lo1zQ?key=YmFVNi1tZ0E1VUpKanBuRlFXNm1OZ3M4c0V1d0pR" referrerpolicy="strict-origin-when-cross-origin" x-frame-options:SAMEORIGIN x-xss-protection:1; mode=block;></iframe> -->
+        
+    <script>
+        document.getElementById('simulateButton').addEventListener('click', function () {
+            // Create a new keyboard event
+            const event = new KeyboardEvent('keydown', {
+                key: 'D',
+                code: 'KeyD',
+                shiftKey: true, // Simulate Shift key being pressed
+                bubbles: true, // Allow the event to bubble up
+                cancelable: true // Allow the event to be canceled
+            });
+
+            // Dispatch the event to the document
+            document.dispatchEvent(event);
+            console.log(event);
+
+            // Optionally, you can also show the iframe for debugging purposes
+            // document.getElementById('hiddenWebsite').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
