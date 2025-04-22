@@ -22,6 +22,19 @@
             color: white;
         }
 
+        header {
+            background-color: #0072c3;
+            text-align: start;
+            padding: 10px 10;
+            border-bottom: 2px solid #333;
+        }
+
+        .logo {
+            max-width: 70px;
+            width: 90%;
+            height: auto;
+        }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -43,6 +56,30 @@
             border: none;
         }
 
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-server {
+            background-color: #1e1e1e;
+            color: white;
+            padding: 10px 20px;
+            border: 2px solid #00bcd4;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-server:hover {
+            background-color: #00bcd4;
+            color: #000;
+        }
+
         /* Responsive tweaks */
         @media (min-width: 768px) {
             .container {
@@ -50,6 +87,7 @@
                 flex-wrap: wrap;
                 justify-content: space-between;
             }
+
             .video-frame {
                 width: 100%;
             }
@@ -68,16 +106,28 @@
 </head>
 
 <body class="dark-mode with-custom-scrollbars with-custom-css-scrollbars">
+    <header>
+        <img src="/assets/HindTv-Logo.png" alt="HindTV Logo" class="logo">
+    </header>
     <div class="container">
+
         <!-- https://v18tataplaysyndication.akamaized.net/bpk-tv/StarSports_2_Hin_HD_voot_MOB/output03/index.m3u8?hdnea=exp=1745316933~acl=/*~hmac=e099eb43a720d0ca5c61b8729f4a6d0118aed678d0666a947bc3714d443f8af6 -->
 
         <!-- https://v18tataplaysyndication.akamaized.net/bpk-tv/StarSports_2_Hin_HD_voot_MOB/output03/hdntl=exp=1745396431~acl=%2f*~data=hdntl~hmac=eef49cee5a883c0da3d14bae09da37443663d8d709a50f941aa91428a2af6dc0/StarSports_2_Hin_HD_voot_MOB-audio_108038_hin=108000-video=305200.m3u8 -->
+
+        <!-- https://dai.fancode.com/primary/109443_english_hls_5218ta-di/index.m3u8 -->
+
         <!-- Live HLS Stream -->
         <div class="video-frame">
-            <iframe
+            <iframe id="ipl-player"
                 src="https://www.livereacting.com/tools/hls-player-embed?url=https%3A%2F%2Fuser65873.hls-video.net%2Fhls%2Ftoken%2Fa3f0c81db39d64f85b6f6a5cfaa1b2ce%2Fstream.m3u8"
                 allowfullscreen>
             </iframe>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-server" onclick="switchServer('server1')">Server One</button>
+            <button class="btn-server" onclick="switchServer('server2')">Server Two</button>
         </div>
 
         <!-- JioTV Cricket Widget -->
@@ -87,6 +137,20 @@
             </iframe>
         </div>
     </div>
+    <script>
+        // var player_src = document.getElementById("ipl-player")
+        // console.log(player_src.src);
+        // var server1_link = "https://www.livereacting.com/tools/hls-player-embed?url=https%3A%2F%2Fdai.fancode.com%2Fprimary%2F109443_english_hls_5218ta-di%2Findex.m3u8"
+        // var server2_link = "https://www.livereacting.com/tools/hls-player-embed?url=https%3A%2F%2Fuser65873.hls-video.net%2Fhls%2Ftoken%2Fa3f0c81db39d64f85b6f6a5cfaa1b2ce%2Fstream.m3u8"
+        function switchServer(server) {
+            const player = document.getElementById("ipl-player");
+            const server1_link = "https://www.livereacting.com/tools/hls-player-embed?url=https%3A%2F%2Fdai.fancode.com%2Fprimary%2F109443_english_hls_5218ta-di%2Findex.m3u8";
+            const server2_link = "https://www.livereacting.com/tools/hls-player-embed?url=https%3A%2F%2Fuser65873.hls-video.net%2Fhls%2Ftoken%2Fa3f0c81db39d64f85b6f6a5cfaa1b2ce%2Fstream.m3u8";
+
+            player.src = server === "server1" ? server1_link : server2_link;
+        }
+
+    </script>
 </body>
 
 </html>
