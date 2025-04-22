@@ -462,3 +462,14 @@
 //         }
 // }
 // printEachChar("Hello");
+
+  let str = "hello";
+let freq = {};
+str = str.replace(/ /g, '');
+for (let ch of str) {
+    freq[ch] = (freq[ch] || 0) + 1;
+}
+let sortedKeys = Object.keys(freq).sort();
+for (let ch of sortedKeys) {
+    console.log(`${ch}: ${freq[ch]}`);
+}
